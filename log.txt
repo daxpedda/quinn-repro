@@ -1,0 +1,472 @@
+Mar 25 12:03:45.152  INFO quinn_repro: start!
+Mar 25 12:03:45.153  INFO quinn_repro: did we get stuck?
+Mar 25 12:03:45.154 TRACE mio::poll: registering event source with poller: token=Token(0), interests=READABLE | WRITABLE    
+Mar 25 12:03:45.154  INFO quinn_repro: we didn't!
+Mar 25 12:03:45.154 TRACE mio::poll: registering event source with poller: token=Token(1), interests=READABLE | WRITABLE    
+Mar 25 12:03:45.154 TRACE quinn_proto::endpoint: initial_dcid=6d381c76efd10ddf0c04095fdbdeeae04af52aa1
+Mar 25 12:03:45.154 DEBUG rustls::client::hs: No cached session for DNSNameRef("localhost")    
+Mar 25 12:03:45.154 DEBUG rustls::client::hs: Not resuming any session    
+Mar 25 12:03:45.155 TRACE rustls::client::hs: Sending ClientHello Message {
+    typ: Handshake,
+    version: TLSv1_0,
+    payload: Handshake(
+        HandshakeMessagePayload {
+            typ: ClientHello,
+            payload: ClientHello(
+                ClientHelloPayload {
+                    client_version: TLSv1_2,
+                    random: Random(
+                        [
+                            18,
+                            136,
+                            91,
+                            24,
+                            82,
+                            101,
+                            115,
+                            61,
+                            205,
+                            115,
+                            188,
+                            210,
+                            228,
+                            134,
+                            252,
+                            210,
+                            167,
+                            149,
+                            131,
+                            215,
+                            218,
+                            238,
+                            207,
+                            217,
+                            141,
+                            39,
+                            49,
+                            176,
+                            83,
+                            209,
+                            161,
+                            186,
+                        ],
+                    ),
+                    session_id: SessionID,
+                    cipher_suites: [
+                        TLS13_AES_256_GCM_SHA384,
+                        TLS13_AES_128_GCM_SHA256,
+                        TLS13_CHACHA20_POLY1305_SHA256,
+                        TLS_EMPTY_RENEGOTIATION_INFO_SCSV,
+                    ],
+                    compression_methods: [
+                        Null,
+                    ],
+                    extensions: [
+                        SupportedVersions(
+                            [
+                                TLSv1_3,
+                            ],
+                        ),
+                        ServerName(
+                            [
+                                ServerName {
+                                    typ: HostName,
+                                    payload: HostName(
+                                        DNSName(
+                                            "localhost",
+                                        ),
+                                    ),
+                                },
+                            ],
+                        ),
+                        ECPointFormats(
+                            [
+                                Uncompressed,
+                            ],
+                        ),
+                        NamedGroups(
+                            [
+                                X25519,
+                                secp384r1,
+                                secp256r1,
+                            ],
+                        ),
+                        SignatureAlgorithms(
+                            [
+                                ECDSA_NISTP384_SHA384,
+                                ECDSA_NISTP256_SHA256,
+                                ED25519,
+                                RSA_PSS_SHA512,
+                                RSA_PSS_SHA384,
+                                RSA_PSS_SHA256,
+                                RSA_PKCS1_SHA512,
+                                RSA_PKCS1_SHA384,
+                                RSA_PKCS1_SHA256,
+                            ],
+                        ),
+                        ExtendedMasterSecretRequest,
+                        CertificateStatusRequest(
+                            OCSP(
+                                OCSPCertificateStatusRequest {
+                                    responder_ids: [],
+                                    extensions: PayloadU16(
+                                        [],
+                                    ),
+                                },
+                            ),
+                        ),
+                        KeyShare(
+                            [
+                                KeyShareEntry {
+                                    group: X25519,
+                                    payload: PayloadU16(
+                                        [
+                                            158,
+                                            154,
+                                            196,
+                                            168,
+                                            247,
+                                            234,
+                                            211,
+                                            182,
+                                            91,
+                                            58,
+                                            87,
+                                            150,
+                                            151,
+                                            51,
+                                            35,
+                                            22,
+                                            14,
+                                            66,
+                                            0,
+                                            232,
+                                            12,
+                                            175,
+                                            216,
+                                            249,
+                                            81,
+                                            255,
+                                            79,
+                                            142,
+                                            130,
+                                            13,
+                                            2,
+                                            89,
+                                        ],
+                                    ),
+                                },
+                            ],
+                        ),
+                        PresharedKeyModes(
+                            [
+                                PSK_DHE_KE,
+                            ],
+                        ),
+                        TransportParameters(
+                            [
+                                1,
+                                2,
+                                103,
+                                16,
+                                3,
+                                2,
+                                69,
+                                200,
+                                4,
+                                8,
+                                255,
+                                255,
+                                255,
+                                255,
+                                255,
+                                255,
+                                255,
+                                255,
+                                5,
+                                4,
+                                128,
+                                19,
+                                18,
+                                208,
+                                6,
+                                4,
+                                128,
+                                19,
+                                18,
+                                208,
+                                7,
+                                4,
+                                128,
+                                19,
+                                18,
+                                208,
+                                8,
+                                2,
+                                64,
+                                100,
+                                9,
+                                2,
+                                64,
+                                100,
+                                11,
+                                1,
+                                0,
+                                14,
+                                1,
+                                5,
+                                64,
+                                182,
+                                0,
+                                32,
+                                4,
+                                128,
+                                0,
+                                255,
+                                255,
+                                15,
+                                8,
+                                115,
+                                67,
+                                174,
+                                158,
+                                54,
+                                134,
+                                118,
+                                136,
+                            ],
+                        ),
+                        SessionTicketRequest,
+                    ],
+                },
+            ),
+        },
+    ),
+}    
+Mar 25 12:03:45.156 TRACE quinn_proto::connection: wrote 258 Initial CRYPTO bytes
+Mar 25 12:03:45.156 TRACE drive{id=0}:send{space=Initial pn=0}: quinn_proto::connection: CRYPTO: off 0 len 258
+Mar 25 12:03:45.156 TRACE drive{id=0}:send{space=Initial pn=0}: quinn_proto::connection::packet_builder: PADDING * 883
+Mar 25 12:03:45.156 TRACE drive{id=0}: quinn_proto::connection: sending 1200 bytes in 1 datagrams
+Mar 25 12:03:45.157 TRACE first recv: quinn_proto::connection: authenticated
+Mar 25 12:03:45.157 TRACE first recv:frame{ty=CRYPTO}: quinn_proto::connection: consumed 258 CRYPTO bytes
+Mar 25 12:03:45.158 TRACE first recv:frame{ty=CRYPTO}: rustls::server::hs: we got a clienthello ClientHelloPayload { client_version: TLSv1_2, random: Random([18, 136, 91, 24, 82, 101, 115, 61, 205, 115, 188, 210, 228, 134, 252, 210, 167, 149, 131, 215, 218, 238, 207, 217, 141, 39, 49, 176, 83, 209, 161, 186]), session_id: SessionID, cipher_suites: [TLS13_AES_256_GCM_SHA384, TLS13_AES_128_GCM_SHA256, TLS13_CHACHA20_POLY1305_SHA256, TLS_EMPTY_RENEGOTIATION_INFO_SCSV], compression_methods: [Null], extensions: [SupportedVersions([TLSv1_3]), ServerName([ServerName { typ: HostName, payload: HostName(DNSName("localhost")) }]), ECPointFormats([Uncompressed]), NamedGroups([X25519, secp384r1, secp256r1]), SignatureAlgorithms([ECDSA_NISTP384_SHA384, ECDSA_NISTP256_SHA256, ED25519, RSA_PSS_SHA512, RSA_PSS_SHA384, RSA_PSS_SHA256, RSA_PKCS1_SHA512, RSA_PKCS1_SHA384, RSA_PKCS1_SHA256]), ExtendedMasterSecretRequest, CertificateStatusRequest(OCSP(OCSPCertificateStatusRequest { responder_ids: [], extensions: PayloadU16([]) })), KeyShare([KeyShareEntry { group: X25519, payload: PayloadU16([158, 154, 196, 168, 247, 234, 211, 182, 91, 58, 87, 150, 151, 51, 35, 22, 14, 66, 0, 232, 12, 175, 216, 249, 81, 255, 79, 142, 130, 13, 2, 89]) }]), PresharedKeyModes([PSK_DHE_KE]), TransportParameters([1, 2, 103, 16, 3, 2, 69, 200, 4, 8, 255, 255, 255, 255, 255, 255, 255, 255, 5, 4, 128, 19, 18, 208, 6, 4, 128, 19, 18, 208, 7, 4, 128, 19, 18, 208, 8, 2, 64, 100, 9, 2, 64, 100, 11, 1, 0, 14, 1, 5, 64, 182, 0, 32, 4, 128, 0, 255, 255, 15, 8, 115, 67, 174, 158, 54, 134, 118, 136]), SessionTicketRequest] }    
+Mar 25 12:03:45.158 TRACE first recv:frame{ty=CRYPTO}: rustls::server::hs: sni Some(DNSNameRef("localhost"))    
+Mar 25 12:03:45.158 TRACE first recv:frame{ty=CRYPTO}: rustls::server::hs: sig schemes [ECDSA_NISTP384_SHA384, ECDSA_NISTP256_SHA256, ED25519, RSA_PSS_SHA512, RSA_PSS_SHA384, RSA_PSS_SHA256, RSA_PKCS1_SHA512, RSA_PKCS1_SHA384, RSA_PKCS1_SHA256]    
+Mar 25 12:03:45.158 TRACE first recv:frame{ty=CRYPTO}: rustls::server::hs: alpn protocols None    
+Mar 25 12:03:45.158 DEBUG first recv:frame{ty=CRYPTO}: rustls::server::hs: decided upon suite SupportedCipherSuite { suite: TLS13_AES_256_GCM_SHA384, kx: BulkOnly, bulk: AES_256_GCM, hash: SHA384, sign: None, enc_key_len: 32, fixed_iv_len: 12, explicit_nonce_len: 0 }    
+Mar 25 12:03:45.159 TRACE first recv:frame{ty=CRYPTO}: rustls::server::tls13: sending server hello Message { typ: Handshake, version: TLSv1_2, payload: Handshake(HandshakeMessagePayload { typ: ServerHello, payload: ServerHello(ServerHelloPayload { legacy_version: TLSv1_2, random: Random([193, 170, 80, 86, 101, 214, 97, 47, 157, 27, 37, 120, 218, 87, 166, 181, 118, 219, 10, 112, 53, 227, 226, 58, 88, 186, 237, 93, 101, 113, 189, 18]), session_id: SessionID, cipher_suite: TLS13_AES_256_GCM_SHA384, compression_method: Null, extensions: [KeyShare(KeyShareEntry { group: X25519, payload: PayloadU16([210, 143, 13, 109, 133, 74, 146, 117, 98, 94, 91, 106, 76, 47, 213, 245, 59, 46, 224, 67, 182, 206, 157, 47, 88, 170, 16, 237, 93, 222, 22, 39]) }), SupportedVersions(TLSv1_3)] }) }) }    
+Mar 25 12:03:45.159 TRACE first recv:frame{ty=CRYPTO}: rustls::server::tls13: sending encrypted extensions Message { typ: Handshake, version: TLSv1_3, payload: Handshake(HandshakeMessagePayload { typ: EncryptedExtensions, payload: EncryptedExtensions([ServerNameAck, TransportParameters([1, 2, 103, 16, 3, 2, 69, 200, 4, 8, 255, 255, 255, 255, 255, 255, 255, 255, 5, 4, 128, 19, 18, 208, 6, 4, 128, 19, 18, 208, 7, 4, 128, 19, 18, 208, 8, 2, 64, 100, 9, 2, 64, 100, 11, 1, 0, 14, 1, 5, 64, 182, 0, 2, 16, 193, 232, 24, 228, 58, 172, 36, 43, 53, 48, 0, 146, 172, 188, 33, 34, 32, 4, 128, 0, 255, 255, 0, 20, 109, 56, 28, 118, 239, 209, 13, 223, 12, 4, 9, 95, 219, 222, 234, 224, 74, 245, 42, 161, 15, 8, 1, 224, 80, 78, 104, 140, 230, 159])]) }) }    
+Mar 25 12:03:45.159 TRACE first recv:frame{ty=CRYPTO}: rustls::server::tls13: sending certificate Message { typ: Handshake, version: TLSv1_3, payload: Handshake(HandshakeMessagePayload { typ: Certificate, payload: CertificateTLS13(CertificatePayloadTLS13 { context: PayloadU8([]), entries: [CertificateEntry { cert: Certificate(b"0\x82\x01K0\x81\xf1\xa0\x03\x02\x01\x02\x02\x01*0\n\x06\x08*\x86H\xce=\x04\x03\x020!1\x1f0\x1d\x06\x03U\x04\x03\x0c\x16rcgen self signed cert0 \x17\r750101000000Z\x18\x0f40960101000000Z0!1\x1f0\x1d\x06\x03U\x04\x03\x0c\x16rcgen self signed cert0Y0\x13\x06\x07*\x86H\xce=\x02\x01\x06\x08*\x86H\xce=\x03\x01\x07\x03B\0\x04\xb6\xda\xd5\x07\xd3\x01(V\x1369\xe38\xc6\xad\xa3JOgK\xce\xc8\x90\xd2k_\x16\xb7\xa0f\xac\xd3\xdc\xd2\r\x88\xe4\xd8\xc3\xc8\xba\x85\xa3\x99U6\xa5Do\xc1\xb3\x95\x81x\xc4W\xf4\x051\0^\xee\x8fW\xa3\x180\x160\x14\x06\x03U\x1d\x11\x04\r0\x0b\x82\tlocalhost0\n\x06\x08*\x86H\xce=\x04\x03\x02\x03I\00F\x02!\0\x81+\xfe\xf8\x81\xd9\xc1\x14\xba\xae\x17\xe8)|t\xcaqx\xad\xa2\xaa\xbc\xc5\xca\xd4\xcbE\xd48n\x0c\xc1\x02!\0\x93\x9d\xb0CU)\xb4\xf7\x94\xd2qN\x91\x81\xbf\t\x81\x82\x08\x11\x91\xd3@\xe5V\xb8\xf3=\x0bu\\\xe4"), exts: [] }] }) }) }    
+Mar 25 12:03:45.159 TRACE first recv:frame{ty=CRYPTO}: rustls::server::tls13: sending certificate-verify Message { typ: Handshake, version: TLSv1_3, payload: Handshake(HandshakeMessagePayload { typ: CertificateVerify, payload: CertificateVerify(DigitallySignedStruct { scheme: ECDSA_NISTP256_SHA256, sig: PayloadU16([48, 70, 2, 33, 0, 200, 149, 228, 43, 135, 162, 91, 243, 236, 149, 111, 174, 112, 11, 60, 219, 219, 204, 83, 129, 250, 102, 246, 163, 218, 145, 45, 6, 233, 239, 195, 92, 2, 33, 0, 200, 20, 49, 126, 192, 115, 124, 181, 83, 47, 170, 141, 224, 21, 217, 236, 244, 182, 0, 11, 228, 209, 255, 203, 128, 214, 88, 61, 43, 115, 100, 245]) }) }) }    
+Mar 25 12:03:45.159 TRACE first recv:frame{ty=CRYPTO}: rustls::server::tls13: sending finished Message { typ: Handshake, version: TLSv1_3, payload: Handshake(HandshakeMessagePayload { typ: Finished, payload: Finished(Payload([253, 135, 145, 118, 224, 75, 129, 0, 252, 139, 170, 147, 68, 172, 144, 121, 97, 71, 192, 37, 231, 15, 111, 151, 8, 200, 59, 37, 94, 242, 254, 220, 37, 224, 117, 148, 125, 183, 184, 130, 242, 80, 108, 101, 99, 102, 243, 113])) }) }    
+Mar 25 12:03:45.160 TRACE first recv: quinn_proto::connection: Handshake keys ready
+Mar 25 12:03:45.160 TRACE first recv: quinn_proto::connection: wrote 90 Initial CRYPTO bytes
+Mar 25 12:03:45.160 TRACE first recv: quinn_proto::connection: Data keys ready
+Mar 25 12:03:45.160 TRACE first recv: quinn_proto::connection: wrote 603 Handshake CRYPTO bytes
+Mar 25 12:03:45.160 TRACE quinn_proto::endpoint: connection incoming id=0 icid=6d381c76efd10ddf0c04095fdbdeeae04af52aa1
+Mar 25 12:03:45.161 TRACE drive{id=0}:send{space=Initial pn=0}: quinn_proto::connection: ACK
+Mar 25 12:03:45.161 TRACE drive{id=0}:send{space=Initial pn=0}: quinn_proto::connection: CRYPTO: off 0 len 90
+Mar 25 12:03:45.161 TRACE drive{id=0}:send{space=Handshake pn=0}: quinn_proto::connection: CRYPTO: off 0 len 603
+Mar 25 12:03:45.161 TRACE drive{id=0}:send{space=Handshake pn=0}: quinn_proto::connection::packet_builder: PADDING * 406
+Mar 25 12:03:45.161 TRACE drive{id=0}: quinn_proto::connection: sending 1200 bytes in 1 datagrams
+Mar 25 12:03:45.161 TRACE drive{id=0}:send{space=Data pn=0}: quinn_proto::connection: NEW_CONNECTION_ID sequence=1 id=d74635f18a59b4d4
+Mar 25 12:03:45.161 TRACE drive{id=0}:send{space=Data pn=0}: quinn_proto::connection: NEW_CONNECTION_ID sequence=2 id=59521281b2029025
+Mar 25 12:03:45.161 TRACE drive{id=0}:send{space=Data pn=0}: quinn_proto::connection: NEW_CONNECTION_ID sequence=3 id=3be9f5da680a3a5a
+Mar 25 12:03:45.161 TRACE drive{id=0}: quinn_proto::connection: got Initial packet (145 bytes) from [::1]:5000 using id 7343ae9e36867688
+Mar 25 12:03:45.161 TRACE drive{id=0}:send{space=Data pn=0}: quinn_proto::connection: NEW_CONNECTION_ID sequence=4 id=4a346b86a44389c0
+Mar 25 12:03:45.162 TRACE drive{id=0}:recv{space=Initial pn=0}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.162 TRACE drive{id=0}: quinn_proto::connection: sending 138 bytes in 1 datagrams
+Mar 25 12:03:45.162 TRACE drive{id=0}:recv{space=Initial pn=0}: quinn_proto::connection: switching remote CID to 01e0504e688ce69f
+Mar 25 12:03:45.162 TRACE drive{id=0}:recv{space=Initial pn=0}:frame{ty=CRYPTO}: quinn_proto::connection: consumed 90 CRYPTO bytes
+Mar 25 12:03:45.162 TRACE drive{id=0}:recv{space=Initial pn=0}:frame{ty=CRYPTO}: rustls::client::hs: We got ServerHello ServerHelloPayload {
+    legacy_version: TLSv1_2,
+    random: Random(
+        [
+            193,
+            170,
+            80,
+            86,
+            101,
+            214,
+            97,
+            47,
+            157,
+            27,
+            37,
+            120,
+            218,
+            87,
+            166,
+            181,
+            118,
+            219,
+            10,
+            112,
+            53,
+            227,
+            226,
+            58,
+            88,
+            186,
+            237,
+            93,
+            101,
+            113,
+            189,
+            18,
+        ],
+    ),
+    session_id: SessionID,
+    cipher_suite: TLS13_AES_256_GCM_SHA384,
+    compression_method: Null,
+    extensions: [
+        KeyShare(
+            KeyShareEntry {
+                group: X25519,
+                payload: PayloadU16(
+                    [
+                        210,
+                        143,
+                        13,
+                        109,
+                        133,
+                        74,
+                        146,
+                        117,
+                        98,
+                        94,
+                        91,
+                        106,
+                        76,
+                        47,
+                        213,
+                        245,
+                        59,
+                        46,
+                        224,
+                        67,
+                        182,
+                        206,
+                        157,
+                        47,
+                        88,
+                        170,
+                        16,
+                        237,
+                        93,
+                        222,
+                        22,
+                        39,
+                    ],
+                ),
+            },
+        ),
+        SupportedVersions(
+            TLSv1_3,
+        ),
+    ],
+}    
+Mar 25 12:03:45.162 DEBUG drive{id=0}:recv{space=Initial pn=0}:frame{ty=CRYPTO}: rustls::client::hs: Using ciphersuite TLS13_AES_256_GCM_SHA384    
+Mar 25 12:03:45.162 DEBUG drive{id=0}:recv{space=Initial pn=0}:frame{ty=CRYPTO}: rustls::client::tls13: Not resuming    
+Mar 25 12:03:45.162 TRACE drive{id=0}:recv{space=Initial pn=0}:frame{ty=CRYPTO}: rustls::client: EarlyData rejected    
+Mar 25 12:03:45.163 TRACE drive{id=0}:recv{space=Initial pn=0}: quinn_proto::connection: Handshake keys ready
+Mar 25 12:03:45.163 TRACE drive{id=0}: quinn_proto::connection: got Handshake packet (1055 bytes) from [::1]:5000 using id 7343ae9e36867688
+Mar 25 12:03:45.163 TRACE drive{id=0}:recv{space=Handshake pn=0}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.163 TRACE drive{id=0}:recv{space=Handshake pn=0}:frame{ty=CRYPTO}: quinn_proto::connection: consumed 603 CRYPTO bytes
+Mar 25 12:03:45.163 DEBUG drive{id=0}:recv{space=Handshake pn=0}:frame{ty=CRYPTO}: rustls::client::tls13: TLS1.3 encrypted extensions: [ServerNameAck, TransportParameters([1, 2, 103, 16, 3, 2, 69, 200, 4, 8, 255, 255, 255, 255, 255, 255, 255, 255, 5, 4, 128, 19, 18, 208, 6, 4, 128, 19, 18, 208, 7, 4, 128, 19, 18, 208, 8, 2, 64, 100, 9, 2, 64, 100, 11, 1, 0, 14, 1, 5, 64, 182, 0, 2, 16, 193, 232, 24, 228, 58, 172, 36, 43, 53, 48, 0, 146, 172, 188, 33, 34, 32, 4, 128, 0, 255, 255, 0, 20, 109, 56, 28, 118, 239, 209, 13, 223, 12, 4, 9, 95, 219, 222, 234, 224, 74, 245, 42, 161, 15, 8, 1, 224, 80, 78, 104, 140, 230, 159])]    
+Mar 25 12:03:45.163 DEBUG drive{id=0}:recv{space=Handshake pn=0}:frame{ty=CRYPTO}: rustls::client::hs: ALPN protocol is None    
+Mar 25 12:03:45.163 TRACE drive{id=0}:recv{space=Handshake pn=0}:frame{ty=CRYPTO}: rustls::client::tls13: Server cert is [Certificate(b"0\x82\x01K0\x81\xf1\xa0\x03\x02\x01\x02\x02\x01*0\n\x06\x08*\x86H\xce=\x04\x03\x020!1\x1f0\x1d\x06\x03U\x04\x03\x0c\x16rcgen self signed cert0 \x17\r750101000000Z\x18\x0f40960101000000Z0!1\x1f0\x1d\x06\x03U\x04\x03\x0c\x16rcgen self signed cert0Y0\x13\x06\x07*\x86H\xce=\x02\x01\x06\x08*\x86H\xce=\x03\x01\x07\x03B\0\x04\xb6\xda\xd5\x07\xd3\x01(V\x1369\xe38\xc6\xad\xa3JOgK\xce\xc8\x90\xd2k_\x16\xb7\xa0f\xac\xd3\xdc\xd2\r\x88\xe4\xd8\xc3\xc8\xba\x85\xa3\x99U6\xa5Do\xc1\xb3\x95\x81x\xc4W\xf4\x051\0^\xee\x8fW\xa3\x180\x160\x14\x06\x03U\x1d\x11\x04\r0\x0b\x82\tlocalhost0\n\x06\x08*\x86H\xce=\x04\x03\x02\x03I\00F\x02!\0\x81+\xfe\xf8\x81\xd9\xc1\x14\xba\xae\x17\xe8)|t\xcaqx\xad\xa2\xaa\xbc\xc5\xca\xd4\xcbE\xd48n\x0c\xc1\x02!\0\x93\x9d\xb0CU)\xb4\xf7\x94\xd2qN\x91\x81\xbf\t\x81\x82\x08\x11\x91\xd3@\xe5V\xb8\xf3=\x0bu\\\xe4")]    
+Mar 25 12:03:45.164 TRACE drive{id=0}:recv{space=Handshake pn=0}: quinn_proto::connection: Data keys ready
+Mar 25 12:03:45.164 TRACE drive{id=0}:recv{space=Handshake pn=0}: quinn_proto::connection: wrote 52 Handshake CRYPTO bytes
+Mar 25 12:03:45.164 TRACE drive{id=0}:recv{space=Handshake pn=0}: quinn_proto::connection: established
+Mar 25 12:03:45.164 TRACE drive{id=0}: quinn_proto::connection: got Data packet (138 bytes) from [::1]:5000 using id 7343ae9e36867688
+Mar 25 12:03:45.165 TRACE drive{id=0}:recv{space=Data pn=0}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.165 TRACE drive{id=0}:recv{space=Data pn=0}:frame{ty=NEW_CONNECTION_ID}: quinn_proto::connection: sequence=1 id=d74635f18a59b4d4 retire_prior_to=0
+Mar 25 12:03:45.165 TRACE drive{id=0}:recv{space=Data pn=0}:frame{ty=NEW_CONNECTION_ID}: quinn_proto::connection: sequence=2 id=59521281b2029025 retire_prior_to=0
+Mar 25 12:03:45.165 TRACE drive{id=0}:recv{space=Data pn=0}:frame{ty=NEW_CONNECTION_ID}: quinn_proto::connection: sequence=3 id=3be9f5da680a3a5a retire_prior_to=0
+Mar 25 12:03:45.165 TRACE drive{id=0}:recv{space=Data pn=0}:frame{ty=NEW_CONNECTION_ID}: quinn_proto::connection: sequence=4 id=4a346b86a44389c0 retire_prior_to=0
+Mar 25 12:03:45.165 TRACE drive{id=0}:send{space=Initial pn=1}: quinn_proto::connection: ACK
+Mar 25 12:03:45.165 TRACE drive{id=0}: quinn_proto::connection: discarding Initial keys
+Mar 25 12:03:45.165 TRACE drive{id=0}:send{space=Handshake pn=0}: quinn_proto::connection: ACK
+Mar 25 12:03:45.165 TRACE drive{id=0}:send{space=Handshake pn=0}: quinn_proto::connection: CRYPTO: off 0 len 52
+Mar 25 12:03:45.165 TRACE drive{id=0}:send{space=Data pn=0}: quinn_proto::connection: ACK
+Mar 25 12:03:45.166 TRACE drive{id=0}:send{space=Data pn=0}: quinn_proto::connection::packet_builder: PADDING * 1010
+Mar 25 12:03:45.166 TRACE drive{id=0}: quinn_proto::connection: sending 1200 bytes in 1 datagrams
+Mar 25 12:03:45.166 TRACE quinn_proto::connection::streams: wrote 4096 bytes stream=client unidirectional stream 0
+Mar 25 12:03:45.166 TRACE drive{id=0}:send{space=Data pn=1}: quinn_proto::connection: ACK
+Mar 25 12:03:45.166 TRACE drive{id=0}:send{space=Data pn=1}: quinn_proto::connection::streams::state: STREAM id=client unidirectional stream 0 off=0 len=1196 fin=false
+Mar 25 12:03:45.166 TRACE drive{id=0}: quinn_proto::connection: got Initial packet (51 bytes) from [::1]:5001 using id 01e0504e688ce69f
+Mar 25 12:03:45.166 TRACE drive{id=0}: quinn_proto::connection: sending 1232 bytes in 1 datagrams
+Mar 25 12:03:45.166 TRACE drive{id=0}:recv{space=Initial pn=1}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.166 TRACE drive{id=0}:send{space=Data pn=2}: quinn_proto::connection: ACK
+Mar 25 12:03:45.166 TRACE drive{id=0}:send{space=Data pn=2}: quinn_proto::connection::streams::state: STREAM id=client unidirectional stream 0 off=1196 len=1194 fin=false
+Mar 25 12:03:45.166 TRACE drive{id=0}: quinn_proto::connection: sending 1232 bytes in 1 datagrams
+Mar 25 12:03:45.166 TRACE drive{id=0}: quinn_proto::connection: got Handshake packet (105 bytes) from [::1]:5001 using id 01e0504e688ce69f
+Mar 25 12:03:45.167 TRACE drive{id=0}:send{space=Data pn=3}: quinn_proto::connection: ACK
+Mar 25 12:03:45.167 TRACE drive{id=0}:recv{space=Handshake pn=0}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.167 TRACE drive{id=0}:recv{space=Handshake pn=0}: quinn_proto::connection: discarding Initial keys
+Mar 25 12:03:45.167 TRACE drive{id=0}:send{space=Data pn=3}: quinn_proto::connection::streams::state: STREAM id=client unidirectional stream 0 off=2390 len=1194 fin=false
+Mar 25 12:03:45.167 TRACE drive{id=0}: quinn_proto::connection: sending 1232 bytes in 1 datagrams
+Mar 25 12:03:45.167 TRACE drive{id=0}:recv{space=Handshake pn=0}:frame{ty=CRYPTO}: quinn_proto::connection: consumed 52 CRYPTO bytes
+Mar 25 12:03:45.167 TRACE drive{id=0}:send{space=Data pn=4}: quinn_proto::connection: ACK
+Mar 25 12:03:45.167 TRACE drive{id=0}:send{space=Data pn=4}: quinn_proto::connection::streams::state: STREAM id=client unidirectional stream 0 off=3584 len=512 fin=true
+Mar 25 12:03:45.167 TRACE drive{id=0}:recv{space=Handshake pn=0}:frame{ty=CRYPTO}: rustls::server::tls13: sending new stateful ticket Message { typ: Handshake, version: TLSv1_3, payload: Handshake(HandshakeMessagePayload { typ: NewSessionTicket, payload: NewSessionTicketTLS13(NewSessionTicketPayloadTLS13 { lifetime: 86400, age_add: 3014480775, nonce: PayloadU8([153, 175, 236, 37, 240, 38, 143, 196, 232, 3, 168, 36, 58, 73, 243, 64, 152, 40, 10, 160, 245, 32, 20, 201, 130, 236, 38, 223, 53, 172, 15, 183]), ticket: PayloadU16([142, 34, 110, 83, 228, 90, 109, 202, 96, 142, 208, 142, 196, 56, 166, 77, 25, 53, 140, 190, 71, 221, 104, 6, 52, 26, 205, 234, 43, 171, 168, 55]), exts: [EarlyData(4294967295)] }) }) }    
+Mar 25 12:03:45.167 TRACE drive{id=0}: quinn_proto::connection: sending 552 bytes in 1 datagrams
+Mar 25 12:03:45.167 TRACE drive{id=0}:recv{space=Handshake pn=0}: quinn_proto::connection: wrote 89 Data CRYPTO bytes
+Mar 25 12:03:45.167 TRACE drive{id=0}:recv{space=Handshake pn=0}: quinn_proto::connection: discarding Handshake keys
+Mar 25 12:03:45.167 TRACE drive{id=0}:recv{space=Handshake pn=0}: quinn_proto::connection: established
+Mar 25 12:03:45.167 TRACE drive{id=0}:send{space=Data pn=5}: quinn_proto::connection: ACK
+Mar 25 12:03:45.167 TRACE drive{id=0}: quinn_proto::connection: got Data packet (1044 bytes) from [::1]:5001 using id 01e0504e688ce69f
+Mar 25 12:03:45.167 TRACE drive{id=0}:send{space=Data pn=5}: quinn_proto::connection: NEW_CONNECTION_ID sequence=1 id=2c3d381980d156c6
+Mar 25 12:03:45.167 TRACE drive{id=0}:recv{space=Data pn=0}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.168 TRACE drive{id=0}:send{space=Data pn=5}: quinn_proto::connection: NEW_CONNECTION_ID sequence=2 id=c12cf936daf27975
+Mar 25 12:03:45.168 TRACE drive{id=0}:send{space=Data pn=5}: quinn_proto::connection: NEW_CONNECTION_ID sequence=3 id=b254b03be1bc0fe9
+Mar 25 12:03:45.168 TRACE drive{id=0}:send{space=Data pn=5}: quinn_proto::connection: NEW_CONNECTION_ID sequence=4 id=63ab42a68dbe8473
+Mar 25 12:03:45.168 TRACE drive{id=0}: quinn_proto::connection: sending 146 bytes in 1 datagrams
+Mar 25 12:03:45.168 TRACE drive{id=0}: quinn_proto::connection: got Data packet (1232 bytes) from [::1]:5001 using id 01e0504e688ce69f
+Mar 25 12:03:45.168 TRACE drive{id=0}:recv{space=Data pn=1}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.168 TRACE drive{id=0}:recv{space=Data pn=1}:frame{ty=STREAM}: quinn_proto::connection::streams::state: got stream id=client unidirectional stream 0 offset=0 len=1196 fin=false
+Mar 25 12:03:45.168 TRACE drive{id=0}: quinn_proto::connection: got Data packet (1232 bytes) from [::1]:5001 using id 01e0504e688ce69f
+Mar 25 12:03:45.169 TRACE drive{id=0}:recv{space=Data pn=2}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.169 TRACE drive{id=0}:recv{space=Data pn=2}:frame{ty=STREAM}: quinn_proto::connection::streams::state: got stream id=client unidirectional stream 0 offset=1196 len=1194 fin=false
+Mar 25 12:03:45.169 TRACE drive{id=0}: quinn_proto::connection: got Data packet (1232 bytes) from [::1]:5001 using id 01e0504e688ce69f
+Mar 25 12:03:45.169 TRACE drive{id=0}:recv{space=Data pn=3}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.169 TRACE drive{id=0}:recv{space=Data pn=3}:frame{ty=STREAM}: quinn_proto::connection::streams::state: got stream id=client unidirectional stream 0 offset=2390 len=1194 fin=false
+Mar 25 12:03:45.169 TRACE drive{id=0}: quinn_proto::connection: got Data packet (552 bytes) from [::1]:5001 using id 01e0504e688ce69f
+Mar 25 12:03:45.169 TRACE drive{id=0}:recv{space=Data pn=4}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.169 TRACE drive{id=0}:recv{space=Data pn=4}:frame{ty=STREAM}: quinn_proto::connection::streams::state: got stream id=client unidirectional stream 0 offset=3584 len=512 fin=true
+Mar 25 12:03:45.170 TRACE drive{id=0}: quinn_proto::connection: got Data packet (146 bytes) from [::1]:5001 using id 01e0504e688ce69f
+Mar 25 12:03:45.170 TRACE drive{id=0}:recv{space=Data pn=5}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.170 TRACE drive{id=0}:recv{space=Data pn=5}:frame{ty=NEW_CONNECTION_ID}: quinn_proto::connection: sequence=1 id=2c3d381980d156c6 retire_prior_to=0
+Mar 25 12:03:45.170 TRACE drive{id=0}:recv{space=Data pn=5}:frame{ty=NEW_CONNECTION_ID}: quinn_proto::connection: sequence=2 id=c12cf936daf27975 retire_prior_to=0
+Mar 25 12:03:45.170 TRACE drive{id=0}:recv{space=Data pn=5}:frame{ty=NEW_CONNECTION_ID}: quinn_proto::connection: sequence=3 id=b254b03be1bc0fe9 retire_prior_to=0
+Mar 25 12:03:45.170 TRACE drive{id=0}:recv{space=Data pn=5}:frame{ty=NEW_CONNECTION_ID}: quinn_proto::connection: sequence=4 id=63ab42a68dbe8473 retire_prior_to=0
+Mar 25 12:03:45.170 TRACE drive{id=0}:send{space=Data pn=1}: quinn_proto::connection: ACK
+Mar 25 12:03:45.170 TRACE drive{id=0}:send{space=Data pn=1}: quinn_proto::connection: CRYPTO: off 0 len 89
+Mar 25 12:03:45.170 TRACE drive{id=0}:send{space=Data pn=1}: quinn_proto::connection: RETIRE_CONNECTION_ID sequence=0
+Mar 25 12:03:45.171 TRACE drive{id=0}: quinn_proto::connection: sending 130 bytes in 1 datagrams
+Mar 25 12:03:45.171  INFO quinn_repro: server finish!
+Mar 25 12:03:45.171 TRACE quinn_proto::connection: connection closed
+Mar 25 12:03:45.171 TRACE drive{id=0}: quinn_proto::connection: got Data packet (130 bytes) from [::1]:5000 using id 2c3d381980d156c6
+Mar 25 12:03:45.171 TRACE drive{id=0}:send{space=Data pn=2}: quinn_proto::connection: sending CONNECTION_CLOSE
+Mar 25 12:03:45.171 TRACE drive{id=0}:recv{space=Data pn=1}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.171 TRACE drive{id=0}: quinn_proto::connection: sending 29 bytes in 1 datagrams
+Mar 25 12:03:45.171 TRACE drive{id=0}:recv{space=Data pn=1}:frame{ty=HANDSHAKE_DONE}: quinn_proto::connection: discarding Handshake keys
+Mar 25 12:03:45.171 TRACE drive{id=0}:recv{space=Data pn=1}:frame{ty=CRYPTO}: quinn_proto::connection: consumed 89 CRYPTO bytes
+Mar 25 12:03:45.171 DEBUG drive{id=0}:recv{space=Data pn=1}:frame{ty=CRYPTO}: rustls::client::tls13: Ticket saved    
+Mar 25 12:03:45.172 TRACE drive{id=0}: quinn_proto::connection: got Data packet (29 bytes) from [::1]:5000 using id 2c3d381980d156c6
+Mar 25 12:03:45.172 TRACE drive{id=0}:recv{space=Data pn=2}: quinn_proto::connection: authenticated
+Mar 25 12:03:45.172 TRACE drive{id=0}: quinn_proto::connection: connection closed
+Mar 25 12:03:45.172 TRACE drive{id=0}:send{space=Data pn=6}: quinn_proto::connection: sending CONNECTION_CLOSE
+Mar 25 12:03:45.172 TRACE drive{id=0}: quinn_proto::connection: sending 30 bytes in 1 datagrams
+Mar 25 12:03:45.172  INFO quinn_repro: client finish!
+Mar 25 12:03:45.172 TRACE quinn_proto::endpoint: peer retired CID 0: 7343ae9e36867688
+Mar 25 12:03:45.172  INFO quinn_repro: finish!
+Mar 25 12:03:45.172  INFO quinn_repro: start!
+Mar 25 12:03:45.172 TRACE drive{id=0}: quinn_proto::connection: got Data packet (30 bytes) from [::1]:5001 using id 01e0504e688ce69f
+Mar 25 12:03:45.172 TRACE drive{id=0}:recv{space=Data pn=6}: quinn_proto::connection: draining
+Mar 25 12:03:45.172  INFO quinn_repro: did we get stuck?
+Mar 25 12:03:45.208 TRACE drive{id=0}: quinn_proto::connection: timeout timer=Close
+Mar 25 12:03:45.208 TRACE mio::poll: deregistering event source from poller    
+Mar 25 12:03:45.217 TRACE drive{id=0}: quinn_proto::connection: timeout timer=Close
+Mar 25 12:03:45.218 TRACE mio::poll: deregistering event source from poller    
